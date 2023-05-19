@@ -46,22 +46,29 @@ class gestorEvaluacion:
                                                     
 
     def listarEstilos(puntajes, federados):
-       
+       #buscar el nombre de quienes estan en estilo L y en estilo E
+        nombreAcomparar= ' '
+        bandera= False
         for i in range(len(puntajes)):
             if puntajes[i].get_estilo() == 'L':
                 nombreAcomparar= federados[i].get_nom()
+            for j in range(len(puntajes)):
+                if (puntajes[j].get_estilo() == 'E'):
+                  if nombreAcomparar== federados[j].get_nom():
+                    print(f'{nombreAcomparar} patina en estilo Libre y en Escuela.')
+                    bandera= True                   
+        if bandera == False:
+            print(f'Nadie patina en ambos estilos.')
+
+
+    def valoracionesDeJueces(puntajes):
+        #Dado el DNI de un inscripto y un estilo, mostrar las 3 valoraciones dadas por los jueces.
+        DNIinscripto=input(str('Ingrese el DNI del inscripto: '))
+        estiloIngresado=input(str('Ingrese el estilo del inscripto: '))
+
         for i in range(len(puntajes)):
-            if (puntajes[i].get_estilo() == 'E'):
-                nombreAcomparar2= federados[i].get_nom()
-        if nombreAcomparar == nombreAcomparar2:
-            print(f'{federados[i].get_nom()} patina en estilo Libre y en Escuela.')
-
-
-            ''' elif puntajes[i].get_estilo() =='E':
-                print(f'{federados[i].get_nom()} patina en estilo Escuela.')'''
-
-
-    
+            if (puntajes[i].get_dni() == DNIinscripto) and (puntajes[i].get_estilo() == estiloIngresado) :
+                print(f'Los puntajes dados por los jueces son: {puntajes[i].get_valor1()} - {puntajes[i].get_valor2()} - {puntajes[i].get_valor3()}.')
                       
                       
 

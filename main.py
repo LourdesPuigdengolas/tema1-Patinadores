@@ -26,7 +26,7 @@ if __name__=='__main__':
             gestorEvaluacion.listarEstilos(puntajes, federados)
 
         elif opcion ==4:
-            gestorEvaluacion.valoraciones(puntajes, federados)
+            gestorEvaluacion.valoracionesDeJueces(puntajes)
         else:
             print(f'Opcion incorrecta!')
         print(f'-------MENU-------:')
