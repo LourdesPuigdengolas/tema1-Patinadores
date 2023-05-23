@@ -7,6 +7,7 @@ if __name__=='__main__':
     federados=[]
     # Carga federados a la lista
     federados= ManejadorFederados.cargarFederados(federados)
+    #declarar lista en su manejador!!!!!
 
     puntajes=[]
     # Carga puntajes a la lista
