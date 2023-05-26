@@ -3,9 +3,9 @@ from federado import Federado
 import csv
 
 class gestorEvaluacion:
-
-    def cargarPuntajes(puntajes):
-        
+    
+    def cargarPuntajes():
+        puntajes=[]
         with open("evaluacion.csv") as archivo:
                 reader = csv.reader(archivo, delimiter=';')
                 for fila in reader:

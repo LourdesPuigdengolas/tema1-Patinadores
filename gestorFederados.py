@@ -4,8 +4,8 @@ import csv
 
 class ManejadorFederados:
      
-    def cargarFederados(federados):
- 
+    def cargarFederados():
+        federados=[]
         with open("federados.csv") as archivo:
             reader = csv.reader(archivo, delimiter=';')
             for fila in reader:
